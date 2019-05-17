@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" style="background-color:#ffffff;width:400px;margin-top:130px;height:700px;background-color:#1CC7D0;opacity:0.5;" >
+
+  <div ><img src="{% static 'images/index.png' %}" alt="" style="border-radius: 10%;align:center;margin-top:40px;margin-left:10px;height:350px;"></div>
+  <div style="margin-top:50px;margin-left:30px;">
+<a href="/accounts/login/"><button type="button" class="btn btn-warning" style="width:300px;"><b> <span style="font-size:30px;">Login as File Creator</span></b></button></a><br><br>
+<a href="/accounts/login/"><button type="button" class="btn btn-warning" style="width:300px;"><b> <span style="font-size:30px;">Login as File Viewer</span></b></button></a>
+  </div>
+</div>
+
+
+{% endblock %}

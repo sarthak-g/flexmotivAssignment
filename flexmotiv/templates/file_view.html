@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>View File</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <a href="{% url 'index' %}"><button type="button" class="btn btn-primary" style="margin-right:10px;;width:100px;float:right;margin-top:10px;">logout</button></a>
+  <h1 style="font-size:60px;color:#C70039;font-weight:bold;text-align:center;"> <b>All Files</b></h1>
+  {% for j in filelist %}
+      <div style="border:2px solid black;padding:10px;">
+      <h3><span style="font-weight:bold;"> File title:</span> {{ j.file_title }}</h3>
+      <h3><span style="font-weight:bold;"> File link:</span> <a href="{{ j.uploaded_file.url }}">{{ j.uploaded_file.url }}</a></h3>
+      <h3><span style="font-weight:bold;"> Created At:</span> {{j.created_at}}</h3>
+      </div>
+      <br>
+  {% endfor %}
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Create File</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+  {% if messages %}
+          {% for message in messages %}
+          <script>
+            alert(" {{ message }} ");
+          </script>
+
+
+          {% endfor %}
+  {% endif %}
+
+
+
+
+<div class="container" style="align:center;font-size:30px;font-weight:bold;border:2px solid black;">
+  <a href="{% url 'index' %}"><button type="button" class="btn btn-primary" style="margin-right:10px;;width:100px;float:right;margin-top:10px;">logout</button></a>
+  <h1 style="font-size:60px;color:#C70039;font-weight:bold;"> <b>Create New File</b></h1>
+  <form method="POST" enctype="multipart/form-data" >
+  {% csrf_token %}
+  {{form|crispy}}
+  <input type="submit" value="Create" class="btn btn-primary" style="width:140px;margin-top:10px;height:40px;margin-bottom:10px;">
+  </form>
+</div>
+
+</body>
+</html>
